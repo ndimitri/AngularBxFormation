@@ -1,9 +1,25 @@
 :host {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   background-color: #489fb5;
   height: 100%;
   padding: 1rem 0.5rem;
   width: 12.5rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+
+    li {
+
+      ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style: none;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
 }
