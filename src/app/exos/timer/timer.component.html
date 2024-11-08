@@ -1,8 +1,8 @@
 <section class="timer-container">
   <div class="controls">
-    <button class="btn start" (click)="start()">Start</button>
-    <button class="btn stop" (click)="stop()">Pause</button>
-    <button class="btn reset" (click)="reset()">Reset</button>
+    <button class="btn start" (click)="start()" [disabled]="state==='start'">Start</button>
+    <button class="btn stop" (click)="stop()" [disabled]="state==='stop'">Pause</button>
+    <button class="btn reset" (click)="reset()" [disabled]="state==='reset'">Reset</button>
   </div>
   <div class="display">
     <span class="time">{{ seconds | time }}</span>

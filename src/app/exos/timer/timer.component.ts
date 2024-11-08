@@ -12,9 +12,7 @@ export class TimerComponent {
 
   start(): void {
     if(this.state !== 'start'){
-      this.secondsInterval = window.setInterval(() => {
-        this.seconds++
-      }, 1000);
+      this.secondsInterval = window.setInterval(() => {this.seconds++}, 1000);
       this.state = 'start';
     }
 

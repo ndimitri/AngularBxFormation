@@ -1,20 +1,21 @@
 /* Général */
-* {
-  box-sizing: border-box;
-  font-family: 'Noto Sans JP', sans-serif; /* Style de police japonais simple et élégant */
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #f4f4f9; /* Fond pastel */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+//* {
+//  box-sizing: border-box;
+//  font-family: 'Noto Sans JP', sans-serif; /* Style de police japonais simple et élégant */
+//  margin: 0;
+//  padding: 0;
+//}
+//
+//body {
+//  background-color: #f4f4f9; /* Fond pastel */
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  height: 100vh;
+//}
 
 .timer-container {
+  font-family: 'Noto Sans JP', sans-serif;
   text-align: center;
   background: #ffe0e9; /* Fond rose pastel */
   border: 2px solid #ffb3b8; /* Bordure rose plus foncé */

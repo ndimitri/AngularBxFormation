@@ -1,0 +1,55 @@
+<h2>Demo Directives</h2>
+
+<section>
+  <h3>
+    Component Directive
+  </h3>
+  <div>
+    <h4>NgStyle</h4>
+    <p [ngClass]="{italic: isItalic, bold: isBold, big: isBig}" class="noel" [ngStyle]="{color: myColor,}">✨Joyeux Noël✨</p>
+  </div>
+  <div>
+    <h4>NgClass</h4>
+    <p [ngClass]="{bold: isBold, italic: isItalic, big: isBig}">Yoooooo</p>
+    <div class="buttons">
+      <button (click)="toggleIsBold()">Bold</button>
+      <button (click)="toggleIsItalic()">Italic</button>
+      <button (click)="toggleIsBig()">Big</button>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <h3>Structural directive</h3>
+  <h4>NgIf : if</h4>
+  <div>
+<!--    <p *ngIf="isDayTime">Jour</p>-->
+<!--    <p *ngIf="!isDayTime">Nuit</p>-->
+    @if(isDayTime){
+      <p>🌞Jour</p>
+    } @else {
+      <p>🌕Nuit</p>
+    }
+
+    <button (click)="toggleIsDayTime()">Switch</button>
+  </div>
+ <h4>NgFor / for</h4>
+  <div class="cards">
+<!--    <div class="card" *ngFor="let trainer of trainers">-->
+<!--      <h5>{{trainer.firstname}} {{trainer.lastname}}</h5>-->
+<!--      <img [src]="'assets/images/'+ trainer.pictureUrl" [alt]="trainer.lastname">-->
+<!--    </div>-->
+    @for(trainer of trainers; track trainer.id){
+      <div class="card" [ngClass]="{disable: !trainer.isActive}">
+        <h5>{{trainer.firstname}} {{trainer.lastname}}</h5>
+        <img [src]="'assets/images/'+ trainer.pictureUrl" [alt]="trainer.lastname">
+      </div>
+    } @empty {
+      <p>La liste est vide</p>
+    }
+
+  </div>
+
+
+</section>
