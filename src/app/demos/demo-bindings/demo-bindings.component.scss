@@ -1,0 +1,128 @@
+
+
+.demo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #4f46e5;
+  margin-bottom: 20px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #3b82f6;
+}
+
+/* Section Styling */
+.binding-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.binding-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-top: 12px;
+}
+
+.description {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Specific Element Styling */
+.highlight {
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.action-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.action-button:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+}
+
+.result {
+  color: #374151;
+  font-size: 1.1rem;
+  margin: 12px 0;
+}
+
+/* Containers */
+.attribute-container,
+.event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

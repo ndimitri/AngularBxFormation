@@ -1,0 +1,34 @@
+<h2>Demo pipes</h2>
+<section>
+  <h3>Built-in pipes</h3>
+  <h4>String pipes</h4>
+  <div>
+    <p>Text : {{text}}</p>
+    <p>Uppercase : {{text | uppercase}}</p>
+    <p>Lowercase : {{text | lowercase}}</p>
+  </div>
+  <h4>Number Pipes</h4>
+  <div>
+    <p>Number : {{nbr}}</p>
+    <p>Arrondi : {{nbr | number : '1.0-4'}}</p>
+    <p>Money : {{nbr | currency : 'EUR'}}</p>
+
+  </div>
+  <h4>Date pipes</h4>
+  <div>
+    <p>Date: {{dateToday}}</p>
+    <p>Date formatted: {{dateToday | date}}</p>
+    <p>Date formatted: {{dateToday | date: 'dd-MM-yy'}}</p>
+  </div>
+
+</section>
+
+
+<section>
+  <h3>Custom pipes</h3>
+  <div>
+    <p>Temperature : {{temperature}}</p>
+    <p>Temperature F° : {{temperature | toFahrenheit }}</p>
+    <p>Temperature Kelvin : {{temperature | temp : 'CK' }}</p>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+/* Général */
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif; /* Style de police japonais simple et élégant */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f9; /* Fond pastel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.timer-container {
+  text-align: center;
+  background: #ffe0e9; /* Fond rose pastel */
+  border: 2px solid #ffb3b8; /* Bordure rose plus foncé */
+  border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 40%;
+}
+
+/* Section des contrôles */
+.controls {
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #f3d1f4; /* Bouton violet pastel */
+  color: #3a1e3e; /* Texte violet foncé */
+  border: 2px solid #cba3d4; /* Bordure violette */
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ffd1d9; /* Couleur rose au survol */
+  transform: translateY(-3px); /* Légère montée au survol */
+}
+
+.start {
+  background-color: #a3d9a5; /* Vert pastel pour le bouton Start */
+  border-color: #81c78f;
+  color: #2c5931;
+}
+
+.stop {
+  background-color: #f7d6a7; /* Jaune pastel pour le bouton Pause */
+  border-color: #e0b877;
+  color: #5b4728;
+}
+
+.reset {
+  background-color: #f9a3a7; /* Rouge pastel pour le bouton Reset */
+  border-color: #e3878d;
+  color: #6d282a;
+}
+
+/* Affichage du temps */
+.display {
+  margin-top: 15px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #3a1e3e;
+}
+
+.time {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f3d1f4; /* Fond violet pastel pour l’affichage du temps */
+  color: #3a1e3e; /* Texte en violet foncé */
+  border-radius: 8px;
+  border: 2px solid #cba3d4;
+}

@@ -1,0 +1,26 @@
+<p class="demo-text">demo-bindings works!</p>
+<section class="binding-section">
+  <h3 class="section-title">Property Binding</h3>
+  <p class="description">Permet de faire le lien entre une propriété ts et un champ html</p>
+  <h3 class="subtitle">One Way</h3>
+  <p class="content">Le formateur du jour est <span class="highlight">{{formateur}}</span></p>
+  <h3 class="subtitle">Two Way</h3>
+  <input type="text" [(ngModel)]="formateur" class="input-field">
+</section>
+
+<section class="binding-section">
+  <h3 class="section-title">Attribute Binding</h3>
+  <div class="attribute-container">
+    <p class="description">Permet de bind un attribut html au ts</p>
+    <input type="text" [placeholder]="placeholderText" class="input-field">
+  </div>
+</section>
+
+<section class="binding-section">
+  <h3 class="section-title">Event Binding</h3>
+  <div class="event-container">
+    <p class="description">Permet de bind un event html à une méthode ts</p>
+    <p class="result">{{result ?? 'En attente de la génération aléatoire' }}</p>
+    <button (click)="getResult()" class="action-button">Play</button>
+  </div>
+</section>
