@@ -47,6 +47,10 @@ links : Link[] = [
         title : 'Timer',
         url : '/exo/exo01',
       },
+      {
+        title : 'Basket',
+        url : '/exo/exo02',
+      },
     ]
   },
 ]

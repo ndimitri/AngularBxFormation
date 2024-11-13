@@ -1,0 +1,6 @@
+<ng-content></ng-content>
+<p>Etes vous sûr de vouloir supprimer {{fruit}} ?</p>
+<div>
+  <button (click)="emitOnResponseEvent(false)">Non</button>
+  <button (click)="emitOnResponseEvent(true)">Oui</button>
+</div>

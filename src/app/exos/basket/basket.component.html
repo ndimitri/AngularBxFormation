@@ -1,0 +1,7 @@
+
+<div>
+  <input type="text" placeholder="Nom du produit" [(ngModel)]="newProductName">
+  <input type="number" placeholder="Quantité" [(ngModel)]="newProductQuantity">
+  <button (click)="addNewProduct()">Ajouter le produit</button>
+</div>
+<app-basket-list [products]="products" (onResponse)="moveProduct($event)"></app-basket-list>

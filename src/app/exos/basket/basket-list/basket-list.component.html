@@ -1,0 +1,26 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(product of products; track product.id){
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.price ?? 'N/D' }}</td>
+        <td><button (click)="moveProduct(product, MovementType.ADD)">Ajouter</button></td>
+        <td><button (click)="moveProduct(product, MovementType.REMOVE)">Enlever</button></td>
+        <td><button (click)="moveProduct(product, MovementType.DELETE)">Supprimer</button></td>
+      </tr>
+    }
+  </tbody>
+
+</table>
+
+
+

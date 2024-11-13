@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrl: './demo-input-output.component.scss'
 })
 export class DemoInputOutputComponent {
+  fruits: string[] = [
+    'Pomme',
+    'Poire',
+    'Banane',
+    'Kiwi',
+    'Mangue'
+  ];
+
+  selectedFruit : string | undefined;
+
+  selectFruit(fruit: string): void {
+    this.selectedFruit = fruit;
+  }
+
+  reactToUserResponse( wantToDelete: boolean){
+    if(wantToDelete){
+      this.fruits.splice(this.fruits.indexOf(this.selectedFruit!), 1);
+    }
+    this.selectedFruit = undefined;
+  }
+
 
 }

@@ -1,1 +1,24 @@
-<p>demo-input-output works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  @for(fruit of fruits; track fruit){
+    <tr>
+      <td>{{fruit}}</td>
+      <td><button (click)="selectFruit(fruit)">Supprimer</button></td>
+    </tr>
+  }
+  </tbody>
+</table>
+
+
+@if(selectedFruit){
+  <app-delete-dialog [fruit]="selectedFruit" (onResponse)="reactToUserResponse($event)">
+    <h3>Button Remove</h3>
+  </app-delete-dialog>
+}
+
