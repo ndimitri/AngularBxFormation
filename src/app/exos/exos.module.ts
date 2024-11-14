@@ -7,6 +7,7 @@ import { ExosComponent } from './exos.component';
 import {SharedModule} from '../shared/shared.module';
 import { BasketComponent } from './basket/basket.component';
 import { BasketListComponent } from './basket/basket-list/basket-list.component';
+import { ExoFormComponent } from './exo-form/exo-form.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BasketListComponent } from './basket/basket-list/basket-list.component'
     TimerComponent,
     ExosComponent,
     BasketComponent,
-    BasketListComponent
+    BasketListComponent,
+    ExoFormComponent
   ],
   imports: [
     CommonModule,

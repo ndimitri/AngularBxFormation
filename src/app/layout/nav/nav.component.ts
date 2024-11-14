@@ -36,6 +36,10 @@ links : Link[] = [
         title : 'Input Output',
         url : '/demo/demo04',
       },
+      {
+        title : 'Formulaire',
+        url : '/demo/demo05',
+      },
     ]
   },
   {
@@ -50,6 +54,10 @@ links : Link[] = [
       {
         title : 'Basket',
         url : '/exo/exo02',
+      },
+      {
+        title : 'Formulaire RDV',
+        url : '/exo/exo03',
       },
     ]
   },

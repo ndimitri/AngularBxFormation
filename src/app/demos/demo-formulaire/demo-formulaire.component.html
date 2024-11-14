@@ -1,0 +1,67 @@
+<h1>Demo Form</h1>
+
+<section>
+  <h3>Person form</h3>
+  <form [formGroup]="personForm" (ngSubmit)="submit()">
+    <div>
+      <label for="firstName">Prénom : </label>
+      <input id="firstName" type="text" placeholder="Prénom" formControlName="firstName">
+      <app-form-error [control]="personForm.get('firstName')"></app-form-error>
+    </div>
+    <div>
+      <label for="lastName">Nom : </label>
+      <input id="lastName" type="text" placeholder="Nom" formControlName="lastName">
+      <app-form-error [control]="personForm.get('lastName')"></app-form-error>
+    </div>
+    <div>
+      <label for="birthDate">Birthdate : </label>
+      <input id="birthDate" type="date"  formControlName="birthDate">
+      <app-form-error [control]="personForm.get('birthDate')"></app-form-error>
+    </div>
+    <div>
+      <label for="email">Email : </label>
+      <input id="email" type="email"  formControlName="email">
+      <app-form-error [control]="personForm.get('email')"></app-form-error>
+    </div>
+    <div>
+      <label for="password">Password : </label>
+      <input id="password" type="password"  formControlName="password">
+      <app-form-error [control]="personForm.get('password')"></app-form-error>
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm Password : </label>
+      <input id="confirmPassword" type="password"  formControlName="confirmPassword">
+      <app-form-error [control]="personForm.get('confirmPassword')"></app-form-error>
+      <app-form-error [control]="personForm"></app-form-error>
+    </div>
+    <div>
+      <label for="phoneNumber">Phone Number : </label>
+      <input id="phoneNumber" type="tel"  formControlName="phoneNumber">
+      <app-form-error [control]="personForm.get('phoneNumber')"></app-form-error>
+    </div>
+    <div>
+      <label for="siblings">Siblings : </label>
+      <input id="siblings" type="text"  placeholder="Nbr frere et soeurs" formControlName="siblings">
+      <app-form-error [control]="personForm.get('siblings')"></app-form-error>
+    </div>
+    <div>
+      <label for="country">Pays : </label>
+      <select id="country" formControlName="country">
+        <option value="be">Belgique</option>
+        <option value="fr">France</option>
+        <option value="jp">Japon</option>
+        <option value="us">Etats Unis</option>
+        <option value="am">Arménie</option>
+        <option value="br">Bretagne</option>
+      </select>
+      <app-form-error [control]="personForm.get('country')"></app-form-error>
+    </div>
+    <div>
+      <label for="single">Single : </label>
+      <input id="single" type="checkbox"  formControlName="single">
+      <app-form-error [control]="personForm.get('single')"></app-form-error>
+    </div>
+    <button type="submit">Envoyer</button>
+
+  </form>
+</section>

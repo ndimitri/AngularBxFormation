@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ToFahrenheitPipe } from './pipes/to-fahrenheit.pipe';
 import { TempPipe } from './pipes/temp.pipe';
 import { TimePipe } from './pipes/time.pipe';
+import { FormErrorComponent } from './components/form-error/form-error.component';
 
 
 
@@ -12,16 +13,20 @@ import { TimePipe } from './pipes/time.pipe';
     ToFahrenheitPipe,
     TempPipe,
     TimePipe,
+    FormErrorComponent,
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     FormsModule,
     ToFahrenheitPipe,
     TempPipe,
     TimePipe,
+    ReactiveFormsModule,
+    FormErrorComponent,
   ]
 })
 export class SharedModule { }
