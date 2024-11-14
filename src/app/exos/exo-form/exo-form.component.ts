@@ -44,6 +44,7 @@ export class ExoFormComponent {
   }
 
   submit() {
+    //TODO valid the addressForm if atHome is checked
     this.appointmentForm.markAllAsTouched();
 
     if(this.appointmentForm.invalid){
