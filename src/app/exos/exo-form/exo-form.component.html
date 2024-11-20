@@ -1,74 +1,98 @@
 <h1>Exo Formulaire Médicale</h1>
 
 <section>
-  <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
-    <div>
-      <label for="firstName">Prénom : </label>
-      <input id="firstName" type="text" placeholder="Prénom" formControlName="firstName">
-      <app-form-error [control]="appointmentForm.get('firstName')"></app-form-error>
+  <form [formGroup]="fullForm" (ngSubmit)="submit()">
+    <div formGroupName="appointmentForm">
+      <div>
+        <label for="firstName">Prénom : </label>
+        <input id="firstName" type="text" placeholder="Prénom" formControlName="firstName">
+        <app-form-error [control]="appointmentForm.get('firstName')"></app-form-error>
+      </div>
+      <div>
+        <label for="lastName">Nom : </label>
+        <input id="lastName" type="text" placeholder="Nom" formControlName="lastName">
+        <app-form-error [control]="appointmentForm.get('lastName')"></app-form-error>
+      </div>
+      <div>
+        <label for="date">Date : </label>
+        <input id="date" type="date" formControlName="date">
+        <app-form-error [control]="appointmentForm.get('date')"></app-form-error>
+      </div>
+
+      <!-- Dates dynamiques -->
+      <h2>Dates supplémentaires :</h2>
+      <div formArrayName="dates">
+        @for(dateGroup of dates.controls; track dateGroup.value; let i = $index) {
+          <div [formGroupName]="i">
+            <label for="date-{{ i }}">Date supplémentaire {{ i + 1 }} :</label>
+            <input id="date-{{ i }}" type="date" formControlName="date" />
+            <app-form-error [control]="dateGroup.get('date')"></app-form-error>
+            <button type="button" (click)="removeDate(i)">Supprimer</button>
+          </div>
+        }
+      </div>
+      <button type="button" (click)="addDate()">Ajouter une date</button>
+
+
+      <div>
+        <label for="description">Description : </label>
+        <textarea id="description" rows="5" cols="15" formControlName="description"></textarea>
+        <app-form-error [control]="appointmentForm.get('description')"></app-form-error>
+      </div>
+      <div>
+        <label for="email">Email : </label>
+        <input id="email" type="email" placeholder="email" formControlName="email">
+        <app-form-error [control]="appointmentForm.get('email')"></app-form-error>
+      </div>
+      <div>
+        <label for="meetingType">Meeting Type</label>
+        <select formControlName="meetingType" id="meetingType">
+          <option *ngFor="let type of Meetingtype | keyvalue" [value]="type.value">
+            {{type.value}}
+          </option>
+        </select>
+        <app-form-error [control]="appointmentForm.get('meetingType')"></app-form-error>
+      </div>
+      <div>
+        <label for="atHome">Home Rendez-vous ? : </label>
+        <input id="atHome" type="checkbox" formControlName="atHome">
+        <app-form-error [control]="appointmentForm.get('atHome')"></app-form-error>
+      </div>
+
     </div>
-    <div>
-      <label for="lastName">Nom : </label>
-      <input id="lastName" type="text" placeholder="Nom" formControlName="lastName">
-      <app-form-error [control]="appointmentForm.get('lastName')"></app-form-error>
-    </div>
-    <div>
-      <label for="date">Date : </label>
-      <input id="date" type="date" formControlName="date">
-      <app-form-error [control]="appointmentForm.get('date')"></app-form-error>
-    </div>
-    <div>
-      <label for="description">Description : </label>
-      <textarea id="description" rows="5" cols="15" ></textarea>
-      <app-form-error [control]="appointmentForm.get('description')"></app-form-error>
-    </div>
-    <div>
-      <label for="email">Email : </label>
-      <input id="email" type="email" placeholder="email" formControlName="email">
-      <app-form-error [control]="appointmentForm.get('email')"></app-form-error>
-    </div>
-    <div>
-      <label for="meetingType">Meeting Type</label>
-      <select formControlName="meetingType" id="meetingType">
-        <option *ngFor="let type of Meetingtype | keyvalue" [value]="type.value">
-          {{type.value}}
-        </option>
-      </select>
-      <app-form-error [control]="appointmentForm.get('meetingType')"></app-form-error>
-    </div>
-    <div>
-      <label for="atHome">Home Rendez-vous ? : </label>
-      <input id="atHome" type="checkbox" formControlName="atHome">
-      <app-form-error [control]="appointmentForm.get('atHome')"></app-form-error>
-    </div>
+
 
     @if(appointmentForm.get('atHome')?.value){
       <h1>Address Form</h1>
-      <div>
-        <label for="street">Street : </label>
-        <input id="street" type="text" placeholder="Street" formControlName="street">
-        <app-form-error [control]="addressForm.get('street')"></app-form-error>
+
+      <div formGroupName="addressForm">
+        <div>
+          <label for="street">Street : </label>
+          <input id="street" type="text" placeholder="Street" formControlName="street">
+          <app-form-error [control]="addressForm.get('street')"></app-form-error>
+        </div>
+        <div>
+          <label for="number">Number : </label>
+          <input id="number" type="text" placeholder="Number" formControlName="number">
+          <app-form-error [control]="addressForm.get('number')"></app-form-error>
+        </div>
+        <div>
+          <label for="city">City : </label>
+          <input id="city" type="text" placeholder="City" formControlName="city">
+          <app-form-error [control]="addressForm.get('city')"></app-form-error>
+        </div>
+        <div>
+          <label for="state">State : </label>
+          <input id="state" type="text" placeholder="State" formControlName="state">
+          <app-form-error [control]="addressForm.get('state')"></app-form-error>
+        </div>
+        <div>
+          <label for="zip">ZIP : </label>
+          <input id="zip" type="text" placeholder="Zip" formControlName="zip">
+          <app-form-error [control]="addressForm.get('zip')"></app-form-error>
+        </div>
       </div>
-      <div>
-        <label for="number">Number : </label>
-        <input id="number" type="text" placeholder="Number" formControlName="number">
-        <app-form-error [control]="addressForm.get('number')"></app-form-error>
-      </div>
-      <div>
-        <label for="city">City : </label>
-        <input id="city" type="text" placeholder="City" formControlName="city">
-        <app-form-error [control]="addressForm.get('city')"></app-form-error>
-      </div>
-      <div>
-        <label for="state">State : </label>
-        <input id="state" type="text" placeholder="State" formControlName="state">
-        <app-form-error [control]="addressForm.get('state')"></app-form-error>
-      </div>
-      <div>
-        <label for="zip">ZIP : </label>
-        <input id="zip" type="text" placeholder="Zip" formControlName="zip">
-        <app-form-error [control]="addressForm.get('zip')"></app-form-error>
-      </div>
+
     }
 
     <button type="submit">Send your infos</button>
