@@ -40,6 +40,10 @@ links : Link[] = [
         title : 'Formulaire',
         url : '/demo/demo05',
       },
+      {
+        title : 'Yugi',
+        url : '/demo/demo06',
+      },
     ]
   },
   {
