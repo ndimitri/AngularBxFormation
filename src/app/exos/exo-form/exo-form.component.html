@@ -22,7 +22,7 @@
       <!-- Dates dynamiques -->
       <h2>Dates supplémentaires :</h2>
       <div formArrayName="dates">
-        @for(dateGroup of dates.controls; track dateGroup.value; let i = $index) {
+        @for(dateGroup of dates.controls; track i; let i = $index) {
           <div [formGroupName]="i">
             <label for="date-{{ i }}">Date supplémentaire {{ i + 1 }} :</label>
             <input id="date-{{ i }}" type="date" formControlName="date" />

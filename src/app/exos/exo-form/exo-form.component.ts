@@ -46,6 +46,17 @@ export class ExoFormComponent {
       addressForm: this.addressForm,
 
     })
+    //Par défaut désactiver les validateurs de l'addressForm
+    this.addressForm.disable();
+  }
+
+  toggleAddressForm() : void {
+    if(this.addressForm.enabled){
+      this.addressForm.disable();
+      this.addressForm.reset();
+    }else {
+      this.addressForm.enable();
+    }
   }
 
   //Get des dates dynamiques
@@ -55,6 +66,9 @@ export class ExoFormComponent {
 
   // Ajouter une nouvelle date avec validators
   addDate(): void {
+    if(this.dates.length>=5){
+      return
+    }
     const dateControl = this._fb.group({
       date: [null, [Validators.required, weekAfterToday()]], // Validation personnalisée
     });
@@ -67,8 +81,11 @@ export class ExoFormComponent {
   }
 
   submit() {
-    this.appointmentForm.markAllAsTouched();
-    this.dates.controls.forEach((control) => control.markAllAsTouched());
+    // this.appointmentForm.markAllAsTouched();
+    // this.dates.controls.forEach((control) => control.markAllAsTouched());
+    //EVEN TO
+    // ⇓
+    this.fullForm.markAllAsTouched();
 
     if(this.appointmentForm.invalid){
       console.log('Invalid appointment form');
