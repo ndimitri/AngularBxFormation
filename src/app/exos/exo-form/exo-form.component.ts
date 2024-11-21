@@ -3,6 +3,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MeetingType} from '../../shared/enum/MeetingType';
 import {weekAfterToday} from '../../shared/validators/week-after-today';
 import {Address} from '../../shared/models/address';
+import {Appointment} from '../../shared/models/appointment';
 
 @Component({
   selector: 'app-exo-form',
@@ -47,6 +48,7 @@ export class ExoFormComponent {
     })
   }
 
+  //Get des dates dynamiques
   get dates(): FormArray {
     return this.appointmentForm.get('dates') as FormArray;
   }
@@ -69,7 +71,7 @@ export class ExoFormComponent {
     this.dates.controls.forEach((control) => control.markAllAsTouched());
 
     if(this.appointmentForm.invalid){
-      console.log('Invalid');
+      console.log('Invalid appointment form');
       return;
     }
 
@@ -91,9 +93,10 @@ export class ExoFormComponent {
 
     console.log('Valid');
 
-    let appointment = this.appointmentForm.value;
+    //Console.log() to check the form objects
+    let appointment : Appointment= this.appointmentForm.value;
     let address : Address= this.addressForm.value;
-    const additionalDates = this.dates.value;
+    const additionalDates : Date[] = this.dates.value;
 
     console.log('Appointment:', appointment);
     console.log('Address:', address);

@@ -3,7 +3,7 @@ import {AbstractControl, ValidatorFn} from '@angular/forms';
 export const beforeToday = () : ValidatorFn | null => {
   return (control : AbstractControl) => {
 
-    if(!control) {
+    if(!control.value) {
       return null;
     }
     let date : Date = new Date(control.value);

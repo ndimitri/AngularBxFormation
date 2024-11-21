@@ -8,4 +8,5 @@ export interface Appointment {
   email: string;
   meetingType : MeetingType;
   atHome: boolean;
+  dates?: Date[];
 }

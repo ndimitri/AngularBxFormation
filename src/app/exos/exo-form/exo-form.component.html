@@ -26,8 +26,8 @@
           <div [formGroupName]="i">
             <label for="date-{{ i }}">Date supplémentaire {{ i + 1 }} :</label>
             <input id="date-{{ i }}" type="date" formControlName="date" />
-            <app-form-error [control]="dateGroup.get('date')"></app-form-error>
             <button type="button" (click)="removeDate(i)">Supprimer</button>
+            <app-form-error [control]="dateGroup.get('date')"></app-form-error>
           </div>
         }
       </div>
